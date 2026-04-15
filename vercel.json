@@ -5,16 +5,15 @@
       "routePrefix": "/",
       "framework": "vite"
     },
+    "admin": {
+      "entrypoint": "admin",
+      "routePrefix": "/admin",
+      "framework": "vite"
+    },
     "backend": {
       "entrypoint": "backend",
       "routePrefix": "/api",
       "framework": "express"
-    },
-    "admin": {
-      "entrypoint": "admin",
-      "routePrefix": "/user",
-      "framework": "express"
     }
-    
   }
 }
