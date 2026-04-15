@@ -12,7 +12,7 @@
     },
     "admin": {
       "entrypoint": "admin",
-      "routePrefix": "/api",
+      "routePrefix": "/user",
       "framework": "express"
     }
     
