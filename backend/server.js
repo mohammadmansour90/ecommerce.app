@@ -16,9 +16,6 @@ connectCloudinary()
 app.use(express.json())
 app.use(cors())
 
-// IMPORTANT:
-// Because Vercel mounts this backend at /api,
-// do NOT put /api again here.
 app.use('/user', userRouter)
 app.use('/product', productRouter)
 app.use('/cart', cartRouter)
@@ -28,4 +25,8 @@ app.get('/', (req, res) => {
   res.send('API Working')
 })
 
-export default app
+const PORT = process.env.PORT || 4000
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`)
+})

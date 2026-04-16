@@ -9,7 +9,7 @@ const List = ({ token }) => {
 
   const fetchList = async () => {
     try {
-      const response = await axios.get(backendUrl + "/api/product/list");
+      const response = await axios.get(backendUrl + "/product/list");
 
       if (response.data.success) {
         setList(response.data.products);
@@ -27,7 +27,7 @@ const List = ({ token }) => {
   const removeProduct = async (id) => {
     try {
       const response = await axios.post(
-        backendUrl + "/api/product/remove",
+        backendUrl + "/product/remove",
         { id },
         {
           headers: { token }
@@ -78,7 +78,7 @@ const List = ({ token }) => {
               <p>{item.category}</p>
               <p>${item.price}</p>
 
-              {/* ✅ زر الحذف */}
+              {/* زر الحذف */}
               <p
                 onClick={() => removeProduct(item._id)}
                 className="text-center cursor-pointer text-red-500"

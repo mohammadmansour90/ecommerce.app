@@ -8,13 +8,11 @@ const Orders = ({ token }) => {
   const [orders, setOrders] = useState([])
 
   const fetchAllOrders = async () => {
-    if (!token) {
-      return null
-    }
+    if (!token) return null
 
     try {
       const response = await axios.post(
-        backendUrl + '/api/order/list',
+        backendUrl + '/order/list',
         {},
         { headers: { token } }
       )
@@ -33,7 +31,7 @@ const Orders = ({ token }) => {
   const statusHandler = async (event, orderId) => {
     try {
       const response = await axios.post(
-        backendUrl + '/api/order/status',
+        backendUrl + '/order/status',
         {
           orderId,
           status: event.target.value,
