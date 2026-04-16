@@ -3,7 +3,6 @@ import axios from 'axios'
 import { toast } from 'react-toastify'
 
 const Login = ({ setToken }) => {
-
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
@@ -11,7 +10,7 @@ const Login = ({ setToken }) => {
     e.preventDefault()
     try {
       const response = await axios.post(
-        import.meta.env.VITE_BACKEND_URL + '/api/user/admin',
+        import.meta.env.VITE_BACKEND_URL + '/user/admin',
         { email, password }
       )
 
@@ -20,7 +19,6 @@ const Login = ({ setToken }) => {
       } else {
         toast.error(response.data.message)
       }
-
     } catch (error) {
       toast.error(error.message)
     }
